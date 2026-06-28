@@ -1,0 +1,587 @@
+You are a Senior Solution Architect, Product Manager, UI/UX Designer, and Full Stack Developer.
+
+I will provide a software requirement document.
+
+Your task is to analyze the requirements and produce a complete implementation plan and application design.
+
+"Institutional Insights Dashboard: Admission → Academics → Placement Analytics System"
+
+Technology Stack
+
+Frontend:
+
+- Next.js 15 (App Router)
+- React
+- Tailwind CSS
+- Chart.js
+- TypeScript
+
+Backend:
+
+- Next.js API Routes
+
+Database:
+
+- postgresql
+
+Analytics:
+
+- Python
+- Pandas
+- NumPy
+- SciPy
+- Scikit-Learn
+
+Authentication:
+
+- JWT
+- Role-Based Access Control (RBAC)
+
+File Upload:
+
+- Excel (.xlsx)
+- CSV
+
+Reporting:
+
+- PDF Export
+- Excel Export
+
+---
+
+Project Objective
+
+Develop a centralized institutional analytics platform that integrates:
+
+Admission Data
+↓
+Academic Data
+↓
+Placement Data
+↓
+Unified Student Profile
+↓
+Analytics Engine
+↓
+Risk Prediction
+↓
+Recommendation Engine
+↓
+Executive Dashboard
+
+The system must support multiple colleges and should not contain hardcoded placement or academic rules.
+
+---
+
+User Roles
+
+1. Super Admin
+2. Principal
+3. Administration
+4. HOD
+5. Faculty Advisor
+6. Placement Officer
+
+Each role must have configurable permissions.
+
+---
+
+Module 1: Authentication
+
+Features:
+
+- Login
+- Logout
+- Change Password
+- Forgot Password
+- Session Management
+- Role-Based Dashboard
+- Permission Management
+
+Database Tables:
+
+roles
+permissions
+role_permissions
+users
+
+---
+
+Module 2: Department Management
+
+CRUD Operations:
+
+- Department
+- Branch
+- Program
+- Cohort
+- Batch
+
+Examples:
+
+CSE
+ECE
+MECH
+CIVIL
+MBA
+
+---
+
+Module 3: Student Management
+
+Student Profile Fields
+
+Personal Information:
+
+- Register Number
+- Student Name
+- Gender
+- Date of Birth
+- Email
+- Mobile
+
+Academic Background:
+
+- 10th Percentage
+- 12th Percentage
+- Diploma Percentage
+- Admission Type
+- Cutoff Mark
+
+Institution Details:
+
+- Department
+- Batch
+- Regulation
+- Section
+
+Placement Details:
+
+- Current CGPA
+- Active Arrears
+- History Arrears
+
+Features:
+
+- Add Student
+- Edit Student
+- Delete Student
+- View Student
+- Bulk Excel Upload
+- Search
+- Filters
+
+---
+
+Module 4: Admission Management
+
+Fields:
+
+- Admission Year
+- Admission Type
+- Management Quota
+- Counseling Quota
+- Lateral Entry
+- Cutoff Marks
+- School Name
+- District
+
+Features:
+
+- CRUD
+- Excel Upload
+- Analytics
+
+Analytics:
+
+- Seat Fill Rate
+- Branch Demand
+- Admission Trends
+- District-wise Admissions
+- Gender Ratio
+
+---
+
+Module 5: Subject Management
+
+Fields:
+
+- Subject Code
+- Subject Name
+- Credits
+- Semester
+- Department
+- Faculty
+
+CRUD Operations
+
+---
+
+Module 6: Attendance Management
+
+Fields:
+
+- Student
+- Subject
+- Date
+- Present/Absent
+
+Features:
+
+- Manual Entry
+- Excel Upload
+- Attendance Dashboard
+
+Analytics:
+
+- Monthly Attendance
+- Subject-wise Attendance
+- Department-wise Attendance
+
+---
+
+Module 7: Internal Marks Management
+
+Fields:
+
+- Student
+- Subject
+- Test1
+- Test2
+- Assignment
+- Internal Average
+
+Analytics:
+
+- Internal Performance
+- Weak Students
+- Top Students
+
+---
+
+Module 8: Semester Results Management
+
+Fields:
+
+- Semester
+- Subject
+- Grade
+- Result
+- Credits Earned
+- CGPA
+
+Analytics:
+
+- Pass Percentage
+- CGPA Trends
+- Arrear Analysis
+- Semester Comparison
+
+---
+
+Module 9: Company Management
+
+Fields:
+
+- Company Name
+- Industry
+- Tier
+- Website
+- Location
+
+CRUD Operations
+
+---
+
+Module 10: Dynamic Recruitment Drive Management
+
+This module must be completely configurable.
+
+Do not hardcode any eligibility criteria.
+
+Create:
+
+criteria_master
+recruitment_drives
+recruitment_criteria
+
+Examples of Criteria:
+
+- 10th Percentage
+- 12th Percentage
+- Diploma Percentage
+- CGPA
+- Active Arrears
+- History Arrears
+- Department
+- Gender
+- Internship Count
+- Certification Count
+- Hackathon Count
+- Coding Score
+
+Placement Officer should be able to create criteria dynamically from UI.
+
+Example:
+
+10th Percentage >= 80
+
+12th Percentage >= 80
+
+CGPA >= 8
+
+Department = CSE
+
+History Arrears <= 2
+
+The system must automatically calculate eligible students.
+
+---
+
+Module 11: Placement Management
+
+Fields:
+
+- Company
+- Drive
+- Applied
+- Attended
+- Selected
+- Package
+- Internship
+
+Analytics:
+
+- Placement Percentage
+- Highest Package
+- Average Package
+- Recruiter Analysis
+- Department-wise Placement
+
+---
+
+Module 12: Unified Analytics Engine
+
+Integrate:
+
+Admission
+↓
+Attendance
+↓
+Internal Marks
+↓
+Semester Results
+↓
+Placement
+
+Using:
+
+student_id
+
+Generate unified student profiles.
+
+---
+
+Module 13: Cross Funnel Analytics
+
+Create dashboards:
+
+Admission
+↓
+Academic Performance
+↓
+Placement
+
+Analytics:
+
+- Cohort Analysis
+- Branch Comparison
+- Student Journey
+- Admission-to-Placement Funnel
+
+---
+
+Module 14: Risk Prediction Engine
+
+Risk Categories:
+
+Academic Risk:
+
+CGPA < 6
+
+Attendance Risk:
+
+Attendance < 75%
+
+Placement Risk:
+
+More than 3 Arrears
+
+Output:
+
+- Low Risk
+- Medium Risk
+- High Risk
+
+Provide risk score and explanation.
+
+---
+
+Module 15: Statistical Validation Module
+
+Create Python services for:
+
+Pearson Correlation
+
+Example:
+
+12th Percentage vs CGPA
+
+Spearman Correlation
+
+Example:
+
+Attendance vs CGPA
+
+T-Test
+
+Placed vs Not Placed
+
+ANOVA
+
+Branch-wise Performance
+
+Generate statistical reports.
+
+---
+
+Module 16: Recommendation Engine
+
+Rule-Based Recommendations
+
+Examples:
+
+IF Attendance < 75
+THEN Conduct Counseling
+
+IF Placement < 60%
+AND CGPA > 7
+THEN Improve Industry Connect
+
+IF Department Has High Arrears
+THEN Conduct Remedial Coaching
+
+Generate recommendations automatically.
+
+---
+
+Module 17: Reports
+
+Generate:
+
+PDF Reports
+
+- Admission Report
+- Academic Report
+- Placement Report
+- Risk Report
+
+Excel Reports
+
+- Student Report
+- Department Report
+- Placement Report
+
+---
+
+Module 18: Executive Dashboard
+
+Principal Dashboard
+
+Widgets:
+
+- Total Students
+- Admission Trend
+- Pass Percentage
+- Placement Percentage
+- Average CGPA
+- Highest Package
+- Risk Students
+- Recommendations
+
+Charts:
+
+- Bar Charts
+- Pie Charts
+- Line Charts
+- Funnel Charts
+
+---
+
+Module 19: Audit Logs
+
+Track:
+
+- Login
+- Update
+- Delete
+- Excel Upload
+- Report Download
+
+Store:
+
+User
+Action
+Timestamp
+IP Address
+
+---
+
+Module 20: Multi-College Support
+
+The application must support multiple institutions.
+
+Create:
+
+institutions
+
+All records should contain:
+
+institution_id
+
+No hardcoded college values.
+
+---
+
+Database Deliverables
+
+Generate:
+
+- Complete MySQL Schema
+- Foreign Keys
+- Indexes
+- Seed Data
+
+---
+
+Development Deliverables
+
+Generate in this order:
+
+1. Database Schema
+2. ER Diagram
+3. API Design
+4. Authentication Module
+5. Master Modules
+6. Admission Module
+7. Academic Module
+8. Placement Module
+9. Analytics Engine
+10. Risk Prediction
+11. Recommendation Engine
+12. Reports
+13. Executive Dashboard
+14. Testing
+15. Deployment
+
+Create production-ready code with proper folder structure, reusable components, responsive UI, validation, error handling, and documentation.

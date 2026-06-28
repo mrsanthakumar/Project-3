@@ -1,0 +1,32 @@
+# Node
+node_modules/
+.next/
+npm-debug.log*
+
+# Environment
+.env
+.env.local
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+
+# TypeScript
+*.tsbuildinfo
+
+# macOS
+.DS_Store
+_MACOSX/
+
+# Logs
+*.log
+
+# Storage
+storage/
+recordings/
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,46 @@
+{
+  "name": "institutional-insights-dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "db:schema": "psql \"$DATABASE_URL\" -f database/schema.sql",
+    "db:seed": "psql \"$DATABASE_URL\" -f database/seed.sql",
+    "db:setup": "bash scripts/setup-db.sh",
+    "demo:record": "node scripts/record-demo.mjs"
+  },
+  "dependencies": {
+    "next": "15.1.0",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "pg": "^8.13.1",
+    "jose": "^5.9.6",
+    "bcryptjs": "^2.4.3",
+    "zod": "^3.24.1",
+    "chart.js": "^4.4.7",
+    "react-chartjs-2": "^5.2.0",
+    "xlsx": "^0.18.5",
+    "pdfkit": "^0.15.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.2",
+    "@types/pg": "^8.11.10",
+    "@types/bcryptjs": "^2.4.6",
+    "@types/pdfkit": "^0.13.9",
+    "tailwindcss": "^3.4.17",
+    "postcss": "^8.4.49",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^9.17.0",
+    "eslint-config-next": "15.1.0",
+    "playwright": "^1.49.1",
+    "vitest": "^2.1.8"
+  }
+}
